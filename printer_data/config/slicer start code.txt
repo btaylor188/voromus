@@ -1,0 +1,11 @@
+Start:
+M104 S0 ; Stops OrcaSlicer from sending temp waits separately
+M140 S0
+M117 ;clear for adaptive mesh
+print_start EXTRUDER=[first_layer_temperature] BED=[first_layer_bed_temperature] CHAMBER=[chamber_temperature]
+
+At Layer Change
+;BEFORE_LAYER_CHANGE
+;[layer_z]
+G92 E0
+TIMELAPSE_TAKE_FRAME
